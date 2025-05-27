@@ -19,34 +19,39 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-white/95 dark:bg-black/95 backdrop-blur-xl shadow-2xl border-b border-gray-200 dark:border-gray-800' 
+        ? 'bg-white/95 dark:bg-black/95 backdrop-blur-xl shadow-xl border-b border-gray-200 dark:border-gray-800' 
         : 'bg-transparent'
     }`}>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-3xl font-bold gradient-text transition-all duration-500 hover:scale-105">
-            Portfolio
+          <div className="flex items-center space-x-3 transition-all duration-500 hover:scale-105">
+            <img 
+              src="/lovable-uploads/62385505-a16b-4991-86b4-c201985c72c9.png" 
+              alt="Aravind Logo" 
+              className="w-10 h-10"
+            />
+            <span className="text-2xl font-bold text-gray-900 dark:text-white">ARAVIND</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            {['about', 'experience', 'skills', 'projects', 'publications', 'certifications', 'contact'].map((item, index) => (
+            {['about', 'experience', 'education', 'research', 'skills', 'contact'].map((item, index) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
-                className="capitalize text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 transform hover:scale-110 font-medium relative group"
+                className="capitalize text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 transform hover:scale-110 font-medium relative group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+                {item === 'research' ? 'Publication' : item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </div>
 
           <button
             onClick={toggleTheme}
-            className="p-3 rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 dark:from-gray-100 dark:to-gray-300 dark:hover:from-gray-200 dark:hover:to-gray-400 text-white dark:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg hover:shadow-2xl"
+            className="p-3 rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 hover:from-blue-600 hover:to-blue-800 dark:from-gray-100 dark:to-gray-300 dark:hover:from-blue-200 dark:hover:to-blue-400 text-white dark:text-black transition-all duration-300 transform hover:scale-110 hover:rotate-12 shadow-lg hover:shadow-2xl"
             aria-label="Toggle theme"
           >
             {isDark ? '☀️' : '🌙'}
