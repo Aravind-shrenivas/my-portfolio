@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import SpotifyWidget from './SpotifyWidget';
+import BlogSection from './BlogSection';
 
 const AboutMe = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -82,7 +82,7 @@ const AboutMe = () => {
             </div>
             
             <div className="animate-fade-in delay-700">
-              <SpotifyWidget />
+              <BlogSection />
             </div>
           </div>
         </div>

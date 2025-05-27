@@ -26,17 +26,16 @@ const Header = () => {
     }`}>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3 transition-all duration-500 hover:scale-105">
+          <div className="flex items-center transition-all duration-500 hover:scale-105">
             <img 
-              src="/lovable-uploads/62385505-a16b-4991-86b4-c201985c72c9.png" 
+              src="/lovable-uploads/235b3942-d0c3-40c2-b5cc-57a68a546879.png" 
               alt="Aravind Logo" 
-              className="w-10 h-10"
+              className="w-12 h-12"
             />
-            <span className="text-2xl font-bold text-gray-900 dark:text-white">ARAVIND</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            {['about', 'experience', 'education', 'research', 'skills', 'contact'].map((item, index) => (
+            {['about', 'experience', 'education', 'research', 'projects', 'skills', 'contact'].map((item, index) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}

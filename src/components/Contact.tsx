@@ -1,5 +1,7 @@
 
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +9,8 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -15,46 +19,69 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Thank you ${formData.name}! Your message has been received. I'll get back to you soon!`);
-    setFormData({ name: '', email: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      // EmailJS configuration - you'll need to set these up in your EmailJS account
+      await emailjs.send(
+        'service_id', // Replace with your EmailJS service ID
+        'template_id', // Replace with your EmailJS template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'aravindshrenivas@gmail.com'
+        },
+        'public_key' // Replace with your EmailJS public key
+      );
+      
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    }
   };
 
   const contactInfo = [
     {
       label: "Location",
       value: "Fremont, California",
-      icon: "📍",
+      icon: MapPin,
       gradient: "from-blue-500 to-blue-600"
     },
     {
       label: "Email",
       value: "aravindshrenivas@gmail.com",
-      icon: "📧",
+      icon: Mail,
       gradient: "from-emerald-500 to-emerald-600",
       link: "mailto:aravindshrenivas@gmail.com"
     },
     {
       label: "Phone",
       value: "+1 (520) 535-7327",
-      icon: "📱",
+      icon: Phone,
       gradient: "from-yellow-500 to-yellow-600",
       link: "tel:+15205357327"
     },
     {
       label: "LinkedIn",
       value: "linkedin.com/in/aravind-shrenivas",
-      icon: "💼",
+      icon: Linkedin,
       gradient: "from-blue-600 to-blue-700",
       link: "https://linkedin.com/in/aravind-shrenivas"
     },
     {
-      label: "Portfolio",
-      value: "datascienceportfol.io/aravindshrenivas",
-      icon: "🌐",
-      gradient: "from-emerald-600 to-emerald-700",
-      link: "https://datascienceportfol.io/aravindshrenivas"
+      label: "GitHub",
+      value: "github.com/aravindshrenivas",
+      icon: Github,
+      gradient: "from-gray-600 to-gray-700",
+      link: "https://github.com/aravindshrenivas"
     }
   ];
 
@@ -87,7 +114,7 @@ const Contact = () => {
                   {contact.link ? (
                     <a href={contact.link} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4">
                       <div className={`w-12 h-12 bg-gradient-to-r ${contact.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                        <span className="text-white text-lg">{contact.icon}</span>
+                        <contact.icon className="text-white" size={20} />
                       </div>
                       <div>
                         <p className="font-bold text-gray-900 dark:text-white">{contact.label}</p>
@@ -97,7 +124,7 @@ const Contact = () => {
                   ) : (
                     <div className="flex items-center space-x-4">
                       <div className={`w-12 h-12 bg-gradient-to-r ${contact.gradient} rounded-xl flex items-center justify-center shadow-lg`}>
-                        <span className="text-white text-lg">{contact.icon}</span>
+                        <contact.icon className="text-white" size={20} />
                       </div>
                       <div>
                         <p className="font-bold text-gray-900 dark:text-white">{contact.label}</p>
@@ -162,10 +189,23 @@ const Contact = () => {
               
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white py-4 rounded-xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
+              
+              {submitStatus === 'success' && (
+                <div className="text-green-600 dark:text-green-400 text-center font-medium">
+                  Thanks! Your message has been sent.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="text-red-600 dark:text-red-400 text-center font-medium">
+                  Sorry, there was an error sending your message. Please try again.
+                </div>
+              )}
             </form>
           </div>
         </div>
