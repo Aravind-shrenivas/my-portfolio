@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,17 +24,16 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // EmailJS configuration - you'll need to set these up in your EmailJS account
       await emailjs.send(
-        'service_id', // Replace with your EmailJS service ID
-        'template_id', // Replace with your EmailJS template ID
+        'service_g6vor7d',
+        'template_349i91d',
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_email: 'aravindshrenivas@gmail.com'
         },
-        'public_key' // Replace with your EmailJS public key
+        'CnzJ5LBrl7m7cw2CF'
       );
       
       setSubmitStatus('success');
@@ -63,13 +62,6 @@ const Contact = () => {
       link: "mailto:aravindshrenivas@gmail.com"
     },
     {
-      label: "Phone",
-      value: "+1 (520) 535-7327",
-      icon: Phone,
-      gradient: "from-yellow-500 to-yellow-600",
-      link: "tel:+15205357327"
-    },
-    {
       label: "LinkedIn",
       value: "linkedin.com/in/aravind-shrenivas",
       icon: Linkedin,
@@ -89,8 +81,8 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-black dark:to-gray-900 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-emerald-500 to-yellow-500 rounded-full filter blur-3xl animate-float delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-gray-800 to-black dark:from-gray-200 dark:to-white rounded-full filter blur-3xl animate-float delay-1000"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -196,14 +188,14 @@ const Contact = () => {
               </button>
               
               {submitStatus === 'success' && (
-                <div className="text-green-600 dark:text-green-400 text-center font-medium">
-                  Thanks! Your message has been sent.
+                <div className="text-green-600 dark:text-green-400 text-center font-medium flex items-center justify-center">
+                  ✅ Thanks! Your message has been sent successfully.
                 </div>
               )}
               
               {submitStatus === 'error' && (
-                <div className="text-red-600 dark:text-red-400 text-center font-medium">
-                  Sorry, there was an error sending your message. Please try again.
+                <div className="text-red-600 dark:text-red-400 text-center font-medium flex items-center justify-center">
+                  ❌ Oops! Something went wrong. Please try again later.
                 </div>
               )}
             </form>

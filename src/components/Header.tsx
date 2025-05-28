@@ -28,7 +28,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center transition-all duration-500 hover:scale-105">
             <img 
-              src="/lovable-uploads/235b3942-d0c3-40c2-b5cc-57a68a546879.png" 
+              src="/lovable-uploads/62385505-a16b-4991-86b4-c201985c72c9.png" 
               alt="Aravind Logo" 
               className="w-12 h-12"
             />

@@ -10,11 +10,11 @@ const AboutMe = () => {
   }, []);
 
   return (
-    <section id="about" className="pt-24 pb-16 min-h-screen relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white dark:from-black dark:via-gray-900 dark:to-black">
+    <section id="about" className="pt-24 pb-8 min-h-screen relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white dark:from-black dark:via-gray-900 dark:to-black">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full filter blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-emerald-500 to-yellow-500 rounded-full filter blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 rounded-full filter blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-gray-800 to-black dark:from-gray-200 dark:to-white rounded-full filter blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -48,7 +48,7 @@ const AboutMe = () => {
                 Get In Touch
               </a>
               <a 
-                href="/resume.pdf" 
+                href="https://drive.google.com/file/d/16yaHzOuZpZhXr4IVq4mLE6NqUwWFI4Ic/view?usp=sharing" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
@@ -56,19 +56,12 @@ const AboutMe = () => {
                 View Resume
               </a>
             </div>
-            
-            <div className="grid grid-cols-2 gap-4 text-sm text-gray-600 dark:text-gray-400 animate-fade-in delay-700">
-              <div>📍 Fremont, California</div>
-              <div>📧 aravindshrenivas@gmail.com</div>
-              <div>📱 +1 (520) 535-7327</div>
-              <div>🌐 datascienceportfol.io/aravindshrenivas</div>
-            </div>
           </div>
           
           <div className="space-y-8 animate-slide-in-right delay-300">
             <div className="flex justify-center">
               <div className="relative">
-                <div className="w-80 h-80 rounded-full bg-gradient-to-br from-blue-500 via-emerald-500 to-yellow-500 p-1 animate-scale-in delay-500">
+                <div className="w-80 h-80 rounded-full bg-gradient-to-br from-black via-gray-600 to-gray-800 dark:from-white dark:via-gray-300 dark:to-gray-100 p-1 animate-scale-in delay-500">
                   <img 
                     src="/lovable-uploads/288ce896-b348-49f9-a597-372745fdd5d2.png"
                     alt="Aravind Shrenivas Murali"

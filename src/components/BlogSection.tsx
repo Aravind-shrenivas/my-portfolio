@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { BookOpen } from 'lucide-react';
 
 const BlogSection = () => {
   const blogs = [
@@ -7,36 +8,32 @@ const BlogSection = () => {
       title: "How to Reduce Your Power BI Model Size by 90%",
       author: "Towards Data Science",
       description: "Essential techniques for optimizing Power BI performance and reducing model size for better analytics.",
-      url: "https://towardsdatascience.com",
-      icon: "📊"
+      url: "https://towardsdatascience.com"
     },
     {
       title: "Understanding Transformers",
       author: "Jay Alammar",
       description: "A visual guide to understanding the transformer architecture that powers modern AI.",
-      url: "https://jalammar.github.io/illustrated-transformer/",
-      icon: "🤖"
+      url: "https://jalammar.github.io/illustrated-transformer/"
     },
     {
       title: "Can AI Agents Be Trusted?",
       author: "Harvard Business Review",
       description: "Exploring the ethical implications and trustworthiness of AI systems in business.",
-      url: "https://hbr.org",
-      icon: "🧠"
+      url: "https://hbr.org"
     },
     {
       title: "The Future of MLOps",
       author: "Google AI Blog",
       description: "Best practices for deploying and managing machine learning models in production.",
-      url: "https://ai.googleblog.com",
-      icon: "⚙️"
+      url: "https://ai.googleblog.com"
     }
   ];
 
   return (
     <div className="bg-white/80 dark:bg-black/80 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-gray-200 dark:border-gray-800 hover-lift">
       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 flex items-center">
-        <span className="text-blue-500 mr-2">📖</span>
+        <BookOpen className="text-blue-500 mr-2" size={20} />
         Blogs That Might Interest You
       </h3>
       <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
@@ -53,7 +50,7 @@ const BlogSection = () => {
             style={{ animationDelay: `${index * 100}ms` }}
           >
             <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
-              {blog.icon}
+              <BookOpen size={16} />
             </div>
             <div className="flex-1 min-w-0">
               <p className="font-semibold text-gray-900 dark:text-white text-sm group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">

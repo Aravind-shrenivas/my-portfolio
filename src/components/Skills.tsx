@@ -1,60 +1,82 @@
 
 import React from 'react';
+import { 
+  Code, 
+  Database, 
+  Terminal, 
+  Brain, 
+  Cpu, 
+  Cloud, 
+  Server, 
+  Link, 
+  Zap,
+  BarChart3, 
+  GitBranch, 
+  Settings, 
+  Warehouse, 
+  Search, 
+  TestTube, 
+  TrendingUp, 
+  Layers, 
+  Workflow, 
+  Building2, 
+  Cog 
+} from 'lucide-react';
 
 const Skills = () => {
   const skillCategories = [
     {
       title: "Languages & Libraries",
       skills: [
-        { name: "Python", icon: "🐍" },
-        { name: "R", icon: "📊" },
-        { name: "Java", icon: "☕" },
-        { name: "SQL", icon: "🗃️" },
-        { name: "Shell", icon: "⚡" },
-        { name: "TensorFlow", icon: "🧠" },
-        { name: "Scikit-learn", icon: "🤖" },
-        { name: "PySpark", icon: "✨" }
+        { name: "Python", icon: Code },
+        { name: "R", icon: TrendingUp },
+        { name: "Java", icon: Code },
+        { name: "SQL", icon: Database },
+        { name: "Shell", icon: Terminal },
+        { name: "TensorFlow", icon: Brain },
+        { name: "Scikit-learn", icon: Cpu },
+        { name: "PySpark", icon: Zap }
       ]
     },
     {
       title: "Cloud & Infrastructure",
       skills: [
-        { name: "AWS S3", icon: "☁️" },
-        { name: "AWS EC2", icon: "🖥️" },
-        { name: "AWS Glue", icon: "🔗" },
-        { name: "Azure Synapse", icon: "🔵" },
-        { name: "Azure ML", icon: "🤖" },
-        { name: "GCP BigQuery", icon: "📈" },
-        { name: "Terraform", icon: "🏗️" }
+        { name: "AWS S3", icon: Cloud },
+        { name: "AWS EC2", icon: Server },
+        { name: "AWS Glue", icon: Link },
+        { name: "Azure Synapse", icon: Database },
+        { name: "Azure ML", icon: Brain },
+        { name: "GCP BigQuery", icon: BarChart3 },
+        { name: "Terraform", icon: Building2 }
       ]
     },
     {
       title: "Data & Visualization",
       skills: [
-        { name: "Power BI", icon: "📊" },
-        { name: "Tableau", icon: "📈" },
-        { name: "Data Pipelines", icon: "🔄" },
-        { name: "ETL", icon: "⚙️" },
-        { name: "Data Warehousing", icon: "🏬" }
+        { name: "Power BI", icon: BarChart3 },
+        { name: "Tableau", icon: TrendingUp },
+        { name: "Data Pipelines", icon: GitBranch },
+        { name: "ETL", icon: Settings },
+        { name: "Data Warehousing", icon: Warehouse }
       ]
     },
     {
       title: "ML & Statistics",
       skills: [
-        { name: "Model Optimization", icon: "⚡" },
-        { name: "Anomaly Detection", icon: "🔍" },
-        { name: "Hypothesis Testing", icon: "🧪" },
-        { name: "Statistical Modeling", icon: "📐" }
+        { name: "Model Optimization", icon: Zap },
+        { name: "Anomaly Detection", icon: Search },
+        { name: "Hypothesis Testing", icon: TestTube },
+        { name: "Statistical Modeling", icon: TrendingUp }
       ]
     },
     {
       title: "Frameworks & Tools",
       skills: [
-        { name: "Hadoop", icon: "🐘" },
-        { name: "Spark", icon: "⚡" },
-        { name: "Hive", icon: "🐝" },
-        { name: "Databricks", icon: "🧱" },
-        { name: "Jenkins", icon: "🔧" }
+        { name: "Hadoop", icon: Layers },
+        { name: "Spark", icon: Zap },
+        { name: "Hive", icon: Database },
+        { name: "Databricks", icon: Workflow },
+        { name: "Jenkins", icon: Cog }
       ]
     }
   ];
@@ -63,8 +85,8 @@ const Skills = () => {
     <section id="skills" className="py-20 bg-white dark:bg-black relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full filter blur-3xl animate-float delay-700"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-to-r from-emerald-500 to-yellow-500 rounded-full filter blur-3xl animate-float delay-1000"></div>
+        <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-black to-gray-600 dark:from-white dark:to-gray-400 rounded-full filter blur-3xl animate-float delay-700"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-to-r from-gray-800 to-black dark:from-gray-200 dark:to-white rounded-full filter blur-3xl animate-float delay-1000"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -86,9 +108,7 @@ const Skills = () => {
                     style={{ animationDelay: `${categoryIndex * 200 + skillIndex * 50}ms` }}
                   >
                     <div className="flex items-center space-x-3">
-                      <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
-                        {skill.icon}
-                      </span>
+                      <skill.icon className="text-blue-500 group-hover:text-emerald-500 transition-colors duration-300 group-hover:scale-110 transform" size={20} />
                       <span className="font-semibold text-gray-800 dark:text-gray-200 group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-emerald-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                         {skill.name}
                       </span>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Building2, Hospital } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
@@ -16,7 +17,7 @@ const Experience = () => {
         "Automated infrastructure deployment with Terraform and Jenkins"
       ],
       technologies: ["Python", "AWS Glue", "Azure ML", "Databricks", "PySpark", "Terraform", "Jenkins"],
-      icon: "💼"
+      icon: Building2
     },
     {
       title: "Data Analyst Intern",
@@ -30,15 +31,15 @@ const Experience = () => {
         "Integrated EPIC, survey, and third-party data into real-time reporting"
       ],
       technologies: ["R", "xgboost", "Power BI", "EPIC", "HIPAA Compliance"],
-      icon: "🏥"
+      icon: Hospital
     }
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-black dark:to-gray-900 relative overflow-hidden">
+    <section id="experience" className="py-12 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-black dark:to-gray-900 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full filter blur-3xl animate-float delay-500"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-black to-gray-600 dark:from-white dark:to-gray-400 rounded-full filter blur-3xl animate-float delay-500"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -55,7 +56,7 @@ const Experience = () => {
               <div key={index} className="relative mb-16 ml-16 animate-slide-in-left" style={{ animationDelay: `${index * 200}ms` }}>
                 {/* Enhanced timeline dot */}
                 <div className="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full border-4 border-white dark:border-black shadow-xl flex items-center justify-center animate-scale-in" style={{ animationDelay: `${index * 200 + 300}ms` }}>
-                  <span className="text-white text-sm">{exp.icon}</span>
+                  <exp.icon className="text-white" size={16} />
                 </div>
                 
                 <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl hover:shadow-3xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105">
