@@ -9,56 +9,56 @@ const FeaturedProjects = () => {
       description: "ML models (Isolation Forest, Autoencoder) to detect anomalies in financial transactions.",
       technologies: ["Anomaly Detection", "Autoencoder", "Python", "Scikit-learn"],
       githubUrl: "https://github.com/Aravind-shrenivas/Anomaly-Detection-for-Transaction-Monitoring",
-      image: "/lovable-uploads/38ba2b1a-fc3c-4947-a679-c6a759d9b8a4.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/38ba2b1a-fc3c-4947-a679-c6a759d9b8a4.png`
     },
     {
       title: "Multi-Scale Attention Network for Diabetic Foot Ulcer Segmentation",
       description: "Self-supervised learning + ViT + DenseNet + Attention UNet for ulcer segmentation.",
       technologies: ["Self-supervised Learning", "Computer Vision", "PyTorch"],
       githubUrl: "https://github.com/Aravind-shrenivas/dfu_ssl",
-      image: "/lovable-uploads/25bc6dc0-0023-4e57-b578-28104627eadd.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/25bc6dc0-0023-4e57-b578-28104627eadd.png`
     },
     {
       title: "Car Sales Data Analysis Using SQL",
       description: "Complex queries, customer segmentation using CTEs, BI strategies.",
       technologies: ["SQL", "Data Analysis", "MySQL", "Business Intelligence"],
       githubUrl: "https://github.com/Aravind-shrenivas/car_sales_analysis",
-      image: "/lovable-uploads/4cab9b05-e433-4ea4-a62f-d95eb762c0ee.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/4cab9b05-e433-4ea4-a62f-d95eb762c0ee.png`
     },
     {
       title: "Tech or Treat: The Sentimental Stock Saga",
       description: "Sentiment analysis on Apple stock using VaderSentiment + stock price correlation.",
       technologies: ["NLP", "Sentiment Analysis", "Data Visualization"],
       githubUrl: "https://github.com/INFO-523-Exercises/project-final-Feature-Finders-Club",
-      image: "/lovable-uploads/b45ac90b-bfb6-4858-b36e-b472b2956105.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/b45ac90b-bfb6-4858-b36e-b472b2956105.png`
     },
     {
       title: "Mycetoma Image Classification & Segmentation",
       description: "Deep learning models using nnUNet and CRF; ResNet50 classifier (91.78% accuracy).",
       technologies: ["PyTorch", "Image Segmentation", "Image Classification", "nnUNet"],
       githubUrl: "",
-      image: "/lovable-uploads/3c8899d6-a5c9-4285-8d97-9fba614dfb9d.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/3c8899d6-a5c9-4285-8d97-9fba614dfb9d.png`
     },
     {
       title: "Detection of Alzheimer's Disease Using Retinal Images",
       description: "Used OCT image dataset, applied Mask Autoencoders, SSL, WSL.",
       technologies: ["Deep Learning", "Self-supervised Learning", "Image Processing"],
       githubUrl: "",
-      image: "/lovable-uploads/feb08a0e-24f2-435c-9fdc-854dca2b060f.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/feb08a0e-24f2-435c-9fdc-854dca2b060f.png`
     },
     {
       title: "Cell Image Analysis: Pancreatic Tumor Detection",
       description: "Compared CNNs, FFNNs, ResNet, ViT, VGG16, InceptionV3 for tumor classification.",
       technologies: ["Deep Learning", "Computer Vision", "PyTorch", "TensorFlow"],
       githubUrl: "",
-      image: "/lovable-uploads/71e75d8e-af19-4389-b80c-961a511d563e.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/71e75d8e-af19-4389-b80c-961a511d563e.png`
     },
     {
       title: "Deep Hybrid Model for Skin Cancer Classification",
       description: "CNN + SVM for multiclass skin lesion classification using HAM10000 dataset (97.26% accuracy).",
       technologies: ["CNN", "SVM", "Python"],
       githubUrl: "",
-      image: "/lovable-uploads/e65705b6-de23-4707-b75a-f22821c5510b.png"
+      image: `${import.meta.env.BASE_URL}lovable-uploads/e65705b6-de23-4707-b75a-f22821c5510b.png`
     }
   ];
 

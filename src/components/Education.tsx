@@ -8,7 +8,7 @@ const Education = () => {
       school: "University of Arizona",
       period: "May 2025",
       description: "Advanced coursework in machine learning, statistical modeling, and big data analytics. Focus on healthcare applications and deep learning architectures.",
-      logo: "/lovable-uploads/5c076531-63d2-4907-9b1d-9f68064d41c9.png",
+      logo: `${import.meta.env.BASE_URL}lovable-uploads/5c076531-63d2-4907-9b1d-9f68064d41c9.png`,
       color: "from-blue-500 to-blue-600"
     },
     {
@@ -16,7 +16,7 @@ const Education = () => {
       school: "PSG College of Technology",
       period: "May 2022",
       description: "Interdisciplinary program combining engineering principles with medical applications. Strong foundation in data analysis and research methodologies.",
-      logo: "/lovable-uploads/4e23ce67-b9f0-4175-b3d7-819b9970fc93.png",
+      logo: `${import.meta.env.BASE_URL}lovable-uploads/4e23ce67-b9f0-4175-b3d7-819b9970fc93.png`,
       color: "from-emerald-500 to-emerald-600"
     }
   ];

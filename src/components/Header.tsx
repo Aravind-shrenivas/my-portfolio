@@ -45,7 +45,7 @@ const Header = () => {
             <div className="flex items-center transition-all duration-500 hover:scale-105">
               <div className="w-12 h-12 max-h-12 flex-shrink-0">
                 <img 
-                  src={isDark ? "/lovable-uploads/42f950fd-753d-406e-b4f5-88d74eeae472.png" : "/lovable-uploads/29ae3c9e-f26f-439b-a6b2-b5387b8cb61f.png"}
+                  src={`${import.meta.env.BASE_URL}${isDark ? 'lovable-uploads/42f950fd-753d-406e-b4f5-88d74eeae472.png' : 'lovable-uploads/29ae3c9e-f26f-439b-a6b2-b5387b8cb61f.png'}`}
                   alt="Aravind Logo" 
                   className="w-auto h-full object-contain max-w-full"
                 />

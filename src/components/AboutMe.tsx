@@ -65,7 +65,7 @@ const AboutMe = () => {
                 <div className="relative">
                   <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-black via-gray-600 to-gray-800 dark:from-white dark:via-gray-300 dark:to-gray-100 p-1 animate-scale-in delay-500">
                     <img 
-                      src="/lovable-uploads/288ce896-b348-49f9-a597-372745fdd5d2.png"
+                      src={`${import.meta.env.BASE_URL}lovable-uploads/288ce896-b348-49f9-a597-372745fdd5d2.png`}
                       alt="Aravind Shrenivas Murali"
                       className="w-full h-full rounded-full object-cover shadow-2xl"
                     />
@@ -86,7 +86,7 @@ const AboutMe = () => {
                 <div className="relative">
                   <div className="w-64 h-64 rounded-full bg-gradient-to-br from-black via-gray-600 to-gray-800 dark:from-white dark:via-gray-300 dark:to-gray-100 p-1">
                     <img 
-                      src="/lovable-uploads/288ce896-b348-49f9-a597-372745fdd5d2.png"
+                      src={`${import.meta.env.BASE_URL}lovable-uploads/288ce896-b348-49f9-a597-372745fdd5d2.png`}
                       alt="Aravind Shrenivas Murali"
                       className="w-full h-full rounded-full object-cover shadow-2xl"
                     />
