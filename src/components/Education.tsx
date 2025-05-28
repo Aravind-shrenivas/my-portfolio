@@ -8,7 +8,7 @@ const Education = () => {
       school: "University of Arizona",
       period: "Expected May 2025",
       description: "Advanced coursework in machine learning, statistical modeling, and big data analytics. Focus on healthcare applications and deep learning architectures.",
-      icon: "🎓",
+      logo: "/lovable-uploads/5c076531-63d2-4907-9b1d-9f68064d41c9.png",
       color: "from-blue-500 to-blue-600"
     },
     {
@@ -16,7 +16,7 @@ const Education = () => {
       school: "PSG College of Technology",
       period: "May 2022",
       description: "Interdisciplinary program combining engineering principles with medical applications. Strong foundation in data analysis and research methodologies.",
-      icon: "⚕️",
+      logo: "/lovable-uploads/4e23ce67-b9f0-4175-b3d7-819b9970fc93.png",
       color: "from-emerald-500 to-emerald-600"
     }
   ];
@@ -38,8 +38,12 @@ const Education = () => {
           {education.map((edu, index) => (
             <div key={index} className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl hover:shadow-3xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105 animate-scale-in" style={{ animationDelay: `${index * 200}ms` }}>
               <div className="flex items-center space-x-4 mb-6">
-                <div className={`w-16 h-16 bg-gradient-to-r ${edu.color} rounded-xl flex items-center justify-center shadow-lg text-2xl`}>
-                  {edu.icon}
+                <div className="w-16 h-16 rounded-xl flex items-center justify-center shadow-lg">
+                  <img 
+                    src={edu.logo} 
+                    alt={`${edu.school} logo`}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{edu.degree}</h3>

@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import BlogSection from './BlogSection';
+import AnimatedTagline from './AnimatedTagline';
 
 const AboutMe = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,19 +26,15 @@ const AboutMe = () => {
             <div className="space-y-4">
               <h1 className="text-6xl font-bold text-gray-900 dark:text-white mb-4">
                 Hi, I'm <span className="bg-gradient-to-r from-blue-500 via-emerald-500 to-yellow-500 bg-clip-text text-transparent">
-                  Aravind Shrenivas Murali
+                  Aravind
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 font-medium italic">
-                "Training data by day, training legs by night."
-              </p>
+              <AnimatedTagline />
             </div>
             
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed animate-fade-in delay-300">
-              Hi, I'm Aravind Shrenivas Murali — part data scientist, part magician (the kind who replaces guesswork with algorithms).
-              I'm a Master's student in Data Science at the University of Arizona with 4+ years of industry experience across healthcare, insurance, and finance.
-              I build scalable ML systems, automate data workflows, and make neural networks behave (mostly).
-              I'm also the first author on a Springer-published paper from MICCAI 2024, and I bring structure, storytelling, and statistical sass to every project.
+              Data scientist by training, magician by mindset (I turn chaos into code). With 4+ years of experience and a Springer-published MICCAI 2024 paper, I build ML systems that actually work in the wild.
+              When I'm not wrangling data, I'm lifting at the gym, gaming with friends, or deep in an anime binge.
             </p>
             
             <div className="flex flex-wrap gap-4 animate-fade-in delay-500">

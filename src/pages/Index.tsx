@@ -4,9 +4,11 @@ import { ThemeProvider } from '../contexts/ThemeContext';
 import Header from '../components/Header';
 import AboutMe from '../components/AboutMe';
 import Experience from '../components/Experience';
+import ResearchExperience from '../components/ResearchExperience';
 import Education from '../components/Education';
 import Research from '../components/Research';
 import Projects from '../components/Projects';
+import FeaturedProjects from '../components/FeaturedProjects';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 
@@ -18,9 +20,11 @@ const Index = () => {
         <main className="relative">
           <AboutMe />
           <Experience />
+          <ResearchExperience />
           <Education />
           <Research />
           <Projects />
+          <FeaturedProjects />
           <Skills />
           <Contact />
         </main>

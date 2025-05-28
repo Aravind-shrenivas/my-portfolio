@@ -28,21 +28,21 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center transition-all duration-500 hover:scale-105">
             <img 
-              src="/lovable-uploads/62385505-a16b-4991-86b4-c201985c72c9.png" 
+              src="/lovable-uploads/0f1fc65b-5477-4c01-a525-26b1b6ad7dba.png" 
               alt="Aravind Logo" 
               className="w-12 h-12"
             />
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            {['about', 'experience', 'education', 'research', 'projects', 'skills', 'contact'].map((item, index) => (
+            {['about', 'experience', 'research-experience', 'education', 'research', 'projects', 'skills', 'contact'].map((item, index) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
                 className="capitalize text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 transform hover:scale-110 font-medium relative group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                {item === 'research' ? 'Publication' : item}
+                {item === 'research' ? 'Publication' : item === 'research-experience' ? 'Research' : item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
