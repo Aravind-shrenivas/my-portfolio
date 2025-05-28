@@ -6,7 +6,7 @@ const Education = () => {
     {
       degree: "M.S. in Data Science",
       school: "University of Arizona",
-      period: "Expected May 2025",
+      period: "May 2025",
       description: "Advanced coursework in machine learning, statistical modeling, and big data analytics. Focus on healthcare applications and deep learning architectures.",
       logo: "/lovable-uploads/5c076531-63d2-4907-9b1d-9f68064d41c9.png",
       color: "from-blue-500 to-blue-600"

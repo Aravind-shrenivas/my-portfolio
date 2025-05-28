@@ -27,11 +27,13 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center transition-all duration-500 hover:scale-105">
-            <img 
-              src="/lovable-uploads/0f1fc65b-5477-4c01-a525-26b1b6ad7dba.png" 
-              alt="Aravind Logo" 
-              className="w-12 h-12"
-            />
+            <div className="w-12 h-12 flex-shrink-0">
+              <img 
+                src="/lovable-uploads/62385505-a16b-4991-86b4-c201985c72c9.png" 
+                alt="Aravind Logo" 
+                className="w-full h-full object-contain"
+              />
+            </div>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
