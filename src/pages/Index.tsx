@@ -10,6 +10,7 @@ import Research from '../components/Research';
 import FeaturedProjects from '../components/FeaturedProjects';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
+import Footer from '../components/Footer';
 
 const Index = () => {
   return (
@@ -26,6 +27,7 @@ const Index = () => {
           <Skills />
           <Contact />
         </main>
+        <Footer />
       </div>
     </ThemeProvider>
   );

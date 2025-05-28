@@ -29,7 +29,7 @@ const Header = () => {
           <div className="flex items-center transition-all duration-500 hover:scale-105">
             <div className="w-12 h-12 flex-shrink-0">
               <img 
-                src="/lovable-uploads/62385505-a16b-4991-86b4-c201985c72c9.png" 
+                src="/lovable-uploads/6d81084f-6173-4707-8e07-ea40fee23c08.png" 
                 alt="Aravind Logo" 
                 className="w-full h-full object-contain"
               />
