@@ -11,6 +11,7 @@ import FeaturedProjects from '../components/FeaturedProjects';
 import Skills from '../components/Skills';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import FloatingThemeToggle from '../components/FloatingThemeToggle';
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
           <Contact />
         </main>
         <Footer />
+        <FloatingThemeToggle />
       </div>
     </ThemeProvider>
   );
