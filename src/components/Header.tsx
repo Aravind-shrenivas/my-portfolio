@@ -27,11 +27,11 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center transition-all duration-500 hover:scale-105">
-            <div className="w-12 h-12 flex-shrink-0">
+            <div className="w-12 h-12 max-h-12 flex-shrink-0">
               <img 
-                src="/lovable-uploads/6d81084f-6173-4707-8e07-ea40fee23c08.png" 
+                src={isDark ? "/lovable-uploads/42f950fd-753d-406e-b4f5-88d74eeae472.png" : "/lovable-uploads/29ae3c9e-f26f-439b-a6b2-b5387b8cb61f.png"}
                 alt="Aravind Logo" 
-                className="w-full h-full object-contain"
+                className="w-auto h-full object-contain max-w-full"
               />
             </div>
           </div>
