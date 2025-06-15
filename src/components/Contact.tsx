@@ -69,7 +69,7 @@ const Contact = () => {
     },
     {
       label: "GitHub",
-      value: "github.com/aravindshrenivas",
+      value: "aravind-shrenivas",
       icon: Github,
       gradient: "from-gray-600 to-gray-700",
       link: "https://github.com/aravind-shrenivas"
