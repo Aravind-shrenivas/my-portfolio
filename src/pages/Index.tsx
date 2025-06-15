@@ -13,7 +13,11 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FloatingThemeToggle from '../components/FloatingThemeToggle';
 
+console.log('Index page loading...');
+
 const Index = () => {
+  console.log('Index component rendering...');
+  
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
