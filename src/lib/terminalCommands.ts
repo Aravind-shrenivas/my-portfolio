@@ -1,15 +1,18 @@
 
 import React from 'react';
 
+// URLs for resource commands
 const resumeUrl = "https://drive.google.com/file/d/1189PExRLS2bvao-KqzHWUkV1Dgsy968O/view?usp=sharing";
 const linkedinUrl = "https://linkedin.com/in/aravind-shrenivas";
 const githubUrl = "https://github.com/aravind-shrenivas";
 
+// Util to open links
 const openLink = (url: string) => {
-  window.open(url, '_blank');
+  window.open(url, '_blank', 'noopener,noreferrer');
   return `Opening ${url}...`;
 };
 
+// All terminal commands supported
 export const commands: { [key: string]: (args?: string[]) => React.ReactNode } = {
   help: () => (
     <div className="mt-1">
@@ -24,6 +27,8 @@ export const commands: { [key: string]: (args?: string[]) => React.ReactNode } =
         <li><span className="text-green-400 w-24 inline-block">get linkedin</span> - Open my LinkedIn profile</li>
         <li><span className="text-green-400 w-24 inline-block">get github</span> - Open my GitHub profile</li>
         <li><span className="text-green-400 w-24 inline-block">clear</span> - Clear the terminal screen</li>
+        {/* Optional */}
+        <li><span className="text-green-400 w-24 inline-block">themes</span> - Cycle through terminal color themes</li>
       </ul>
     </div>
   ),
@@ -73,4 +78,6 @@ export const commands: { [key: string]: (args?: string[]) => React.ReactNode } =
   'get linkedin': () => openLink(linkedinUrl),
   'get github': () => openLink(githubUrl),
   clear: () => "clear",
+  themes: () => <span>Theme cycling is not implemented yet. (Coming soon!)</span>,
 };
+
