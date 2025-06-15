@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
-import { Menu, X } from 'lucide-react';
+import { useTerminal } from '../contexts/TerminalContext';
+import { Menu, X, Terminal } from 'lucide-react';
 
 const Header = () => {
   const { isDark } = useTheme();
+  const { toggleTerminal } = useTerminal();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -51,31 +53,42 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Enhanced Hamburger Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="relative p-3 rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 hover:from-blue-600 hover:to-blue-800 dark:from-gray-100 dark:to-gray-300 dark:hover:from-blue-200 dark:hover:to-blue-400 text-white dark:text-black transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-2xl overflow-hidden group"
-              aria-label="Toggle menu"
-            >
-              {/* Enhanced animated hamburger lines */}
-              <div className="relative w-5 h-5 flex flex-col justify-center items-center">
-                {/* Top line */}
-                <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
-                }`}></span>
-                {/* Middle line */}
-                <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
-                }`}></span>
-                {/* Bottom line */}
-                <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
-                }`}></span>
-              </div>
-              
-              {/* Hover effect background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
-            </button>
+            <div className="flex items-center gap-2">
+              {/* Terminal Button */}
+              <button
+                onClick={toggleTerminal}
+                className="hidden md:flex items-center justify-center p-3 rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 hover:from-blue-600 hover:to-blue-800 dark:from-gray-100 dark:to-gray-300 dark:hover:from-blue-200 dark:hover:to-blue-400 text-white dark:text-black transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-2xl"
+                aria-label="Toggle terminal mode"
+              >
+                <Terminal size={20} />
+              </button>
+
+              {/* Enhanced Hamburger Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="relative p-3 rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 hover:from-blue-600 hover:to-blue-800 dark:from-gray-100 dark:to-gray-300 dark:hover:from-blue-200 dark:hover:to-blue-400 text-white dark:text-black transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-2xl overflow-hidden group"
+                aria-label="Toggle menu"
+              >
+                {/* Enhanced animated hamburger lines */}
+                <div className="relative w-5 h-5 flex flex-col justify-center items-center">
+                  {/* Top line */}
+                  <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
+                  }`}></span>
+                  {/* Middle line */}
+                  <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+                  }`}></span>
+                  {/* Bottom line */}
+                  <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out ${
+                    isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
+                  }`}></span>
+                </div>
+                
+                {/* Hover effect background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-emerald-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-xl"></div>
+              </button>
+            </div>
           </div>
         </nav>
       </header>
