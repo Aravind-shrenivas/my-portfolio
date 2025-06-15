@@ -4,7 +4,7 @@ import { ThemeProvider } from '../contexts/ThemeContext';
 import Header from '../components/Header';
 import AboutMe from '../components/AboutMe';
 import Experience from '../components/Experience';
-import ResearchExperience from '../components/ResearchExperience';
+// Removed: import ResearchExperience from '../components/ResearchExperience';
 import Education from '../components/Education';
 import Research from '../components/Research';
 import FeaturedProjects from '../components/FeaturedProjects';
@@ -17,7 +17,7 @@ console.log('Index page loading...');
 
 const Index = () => {
   console.log('Index component rendering...');
-  
+
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
@@ -25,7 +25,7 @@ const Index = () => {
         <main className="relative">
           <AboutMe />
           <Experience />
-          <ResearchExperience />
+          {/* REMOVED: <ResearchExperience /> */}
           <Education />
           <Research />
           <FeaturedProjects />

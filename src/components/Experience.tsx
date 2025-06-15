@@ -1,102 +1,99 @@
 
-import React from 'react';
-import { Building2, Hospital } from 'lucide-react';
+import React from "react";
+import { Briefcase, Terminal, BarChart3, Globe } from "lucide-react";
 
-const Experience = () => {
-  const experiences = [
-    {
-      title: "Senior Analyst",
-      company: "Capgemini",
-      period: "2021 - 2023",
-      description: "Led data science initiatives across marketing, claims processing, and customer analytics, delivering significant business impact through advanced ML solutions.",
-      achievements: [
-        "Boosted marketing ROI by 25% using customer segmentation in Python",
-        "Reduced claims processing by 30% with predictive workflows in AWS Glue", 
-        "Improved customer retention with Azure ML churn prediction",
-        "Enhanced pipeline efficiency by 40% with Databricks + PySpark",
-        "Automated infrastructure deployment with Terraform and Jenkins"
-      ],
-      technologies: ["Python", "AWS Glue", "Azure ML", "Databricks", "PySpark", "Terraform", "Jenkins"],
-      icon: Building2
-    },
-    {
-      title: "Data Analyst Intern",
-      company: "HCL Technologies",
-      period: "2019 - 2020",
-      description: "Developed healthcare analytics solutions focusing on patient outcomes, operational efficiency, and data security compliance.",
-      achievements: [
-        "Reduced hospital readmissions by 15% using R and xgboost",
-        "Improved efficiency by 25% with Power BI dashboards",
-        "Increased data security and HIPAA compliance by 35%",
-        "Integrated EPIC, survey, and third-party data into real-time reporting"
-      ],
-      technologies: ["R", "xgboost", "Power BI", "EPIC", "HIPAA Compliance"],
-      icon: Hospital
-    }
-  ];
+const experiences = [
+  {
+    company: "Intel Corporation, AZ, USA",
+    title: "Supply Chain Analyst | Internship",
+    period: "Jan 2025 – May 2025",
+    achievements: [
+      "Improved forecast accuracy by 12% using Python and Power BI dashboards.",
+      "Automated reports via SQL and Excel macros, reducing manual effort by 30%.",
+      "Applied SAP MM/WM and Lean to cut order cycle times by 15%.",
+      "Collaborated through JIRA and Teams to resolve bottlenecks 10% faster.",
+      "Built dashboards and KPIs that improved stock turnover by 8%."
+    ],
+    icon: BarChart3
+  },
+  {
+    company: "University of Arizona, AZ, USA",
+    title: "Research Assistant",
+    period: "Apr 2024 – Oct 2024",
+    achievements: [
+      "Built a deep learning model for ophthalmic image segmentation (30% faster).",
+      "Authored documentation to support academic publication.",
+      "Created preprocessing pipelines to enhance image quality.",
+      "Boosted model accuracy by 15% through hyperparameter tuning.",
+      "Worked with clinical researchers to apply AI to real-world workflows.",
+      "Placed 3rd in an international medical imaging ML competition."
+    ],
+    icon: Terminal
+  },
+  {
+    company: "Capgemini Technology Services, India",
+    title: "Senior Analyst",
+    period: "Aug 2022 – May 2023",
+    achievements: [
+      "Promoted within 3 months for strong performance as Data Analyst.",
+      "Streamlined OpenText processes, saving 15 hours/week.",
+      "Boosted document search accuracy by 30% using metadata automation.",
+      "Automated 10K+ weekly customer feedback entries.",
+      "Deployed BERT sentiment analysis via AWS Lambda + Power BI."
+    ],
+    icon: Globe,
+  },
+  {
+    company: "Cognizant Technology Solutions, India",
+    title: "Supply Chain Analyst",
+    period: "Sep 2020 – Aug 2022",
+    achievements: [
+      "Reduced excess inventory by 10%, saving $500K annually.",
+      "Built ETL pipelines with Oracle SCM and IBM Sterling OMS (18% more accurate).",
+      "Increased fulfillment by 20% using Six Sigma DMAIC.",
+      "Automated reporting with AWS Lambda + Azure (25% faster).",
+      "Trained 5 junior analysts and improved reporting accuracy by 15%.",
+      "Improved cross-team collaboration via Slack and Confluence."
+    ],
+    icon: Briefcase
+  }
+];
 
-  return (
-    <section id="experience" className="py-12 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-black dark:to-gray-900 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-black to-gray-600 dark:from-white dark:to-gray-400 rounded-full filter blur-3xl animate-float delay-500"></div>
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <h2 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-16 animate-fade-in">
-          Professional <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">Experience</span>
-        </h2>
-        
-        <div className="max-w-5xl mx-auto">
-          <div className="relative">
-            {/* Enhanced timeline line */}
-            <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-emerald-500 to-yellow-500 rounded-full shadow-lg"></div>
-            
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative mb-16 ml-16 animate-slide-in-left" style={{ animationDelay: `${index * 200}ms` }}>
-                {/* Enhanced timeline dot */}
-                <div className="absolute -left-12 top-6 w-8 h-8 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full border-4 border-white dark:border-black shadow-xl flex items-center justify-center animate-scale-in" style={{ animationDelay: `${index * 200 + 300}ms` }}>
-                  <exp.icon className="text-white" size={16} />
-                </div>
-                
-                <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl hover:shadow-3xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                    <div>
-                      <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">{exp.title}</h3>
-                      <p className="text-xl text-gray-700 dark:text-gray-300 font-semibold">{exp.company}</p>
-                    </div>
-                    <span className="text-gray-600 dark:text-gray-400 text-sm mt-2 md:mt-0 bg-gradient-to-r from-blue-100 to-emerald-100 dark:from-blue-900 dark:to-emerald-900 px-4 py-2 rounded-full font-medium">{exp.period}</span>
-                  </div>
-                  
-                  <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-lg">{exp.description}</p>
-                  
-                  <div className="space-y-3 mb-6">
-                    <h4 className="font-semibold text-gray-900 dark:text-white">Key Achievements:</h4>
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex items-start space-x-3">
-                          <span className="text-emerald-500 mt-1">✓</span>
-                          <span className="text-gray-700 dark:text-gray-300">{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="px-3 py-1 bg-gradient-to-r from-blue-500 to-emerald-500 text-white rounded-full text-sm font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+const Experience = () => (
+  <section id="experience" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-black dark:to-gray-900 relative">
+    <div className="container mx-auto px-6">
+      <h2 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-16 animate-fade-in">
+        Professional <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">Experience</span>
+      </h2>
+      <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        {experiences.map((exp, idx) => (
+          <div
+            key={idx}
+            className="relative bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-3xl group"
+          >
+            <div className="flex items-center mb-5 space-x-5">
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-r from-blue-500 to-emerald-500 shadow-lg">
+                <exp.icon className="text-white" size={24} />
               </div>
-            ))}
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white leading-tight">{exp.company}</h3>
+                <p className="text-lg text-gray-600 dark:text-gray-300">{exp.title}</p>
+                <span className="block text-sm text-blue-600 dark:text-emerald-300 font-medium mt-1">{exp.period}</span>
+              </div>
+            </div>
+            <ul className="ml-2 space-y-3 mt-5">
+              {exp.achievements.map((item, achIdx) => (
+                <li key={achIdx} className="flex items-start space-x-2">
+                  <span className="text-emerald-500 mt-1">•</span>
+                  <span className="text-gray-700 dark:text-gray-200 leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Experience;
