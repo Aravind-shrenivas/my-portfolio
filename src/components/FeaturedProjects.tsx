@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Github } from 'lucide-react';
+import { Github, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 
 const projects = [
   {
@@ -70,31 +71,26 @@ const FeaturedProjects = () => {
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-full filter blur-3xl animate-float"></div>
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-br from-emerald-500 to-yellow-500 rounded-full filter blur-3xl animate-float delay-1000"></div>
       </div>
+      
       <div className="container mx-auto px-6 relative z-10">
         <h2 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-16 animate-fade-in">
           Featured <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">Projects</span>
         </h2>
-        {/* Responsive grid: 1col mobile, 2col tablet/desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        
+        {/* Responsive grid: 1 column mobile, 2 columns tablet, 3 columns desktop */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => {
             const isOpen = expanded === index;
             return (
               <div
                 key={index}
                 className={`
-                  relative bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 
-                  transition-all duration-500 group
-                  hover:scale-105 hover:shadow-3xl cursor-pointer
-                  ${isOpen ? "ring-2 ring-emerald-400 scale-105" : ""}
+                  relative bg-white/95 dark:bg-black/95 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-800 
+                  transition-all duration-500 group hover:shadow-2xl hover:scale-105
+                  ${isOpen ? "ring-2 ring-blue-400 scale-105" : ""}
                 `}
-                style={{ minHeight: "420px" }}
-                onClick={() => setExpanded(isOpen ? null : index)}
-                tabIndex={0}
-                onKeyDown={e => {
-                  if (e.key === "Enter" || e.key === " ") setExpanded(isOpen ? null : index);
-                }}
-                aria-expanded={isOpen}
               >
+                {/* Project Image */}
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={project.image}
@@ -102,54 +98,68 @@ const FeaturedProjects = () => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
-                <div className="p-8">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 line-clamp-2">
+                
+                {/* Project Content */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 leading-tight">
                     {project.title}
                   </h3>
-                  <div
-                    className={`transition-all duration-300 ${isOpen ? "max-h-[300px]" : "max-h-[64px] overflow-hidden"}`}
-                  >
-                    <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-base">
+                  
+                  <div className={`transition-all duration-300 overflow-hidden ${isOpen ? "max-h-96" : "max-h-20"}`}>
+                    <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
                       {project.description}
                     </p>
                   </div>
+                  
+                  {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span key={techIndex}
-                        className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium shadow-sm hover:shadow-md transition-all duration-300"
+                    {project.technologies.slice(0, isOpen ? project.technologies.length : 3).map((tech, techIndex) => (
+                      <span 
+                        key={techIndex}
+                        className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs font-medium shadow-sm transition-all duration-300"
                       >
                         {tech}
                       </span>
                     ))}
+                    {!isOpen && project.technologies.length > 3 && (
+                      <span className="px-3 py-1 text-gray-500 dark:text-gray-400 text-xs">
+                        +{project.technologies.length - 3} more
+                      </span>
+                    )}
                   </div>
-                  {project.githubUrl && (
-                    <div className="flex justify-center">
+                  
+                  {/* Action Buttons */}
+                  <div className="flex gap-3">
+                    {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-200 dark:to-gray-100 text-white dark:text-black text-center py-3 rounded-xl hover:shadow-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 text-sm"
+                        className="flex-1 bg-gradient-to-r from-gray-800 to-gray-900 dark:from-gray-200 dark:to-gray-100 text-white dark:text-black text-center py-3 rounded-xl hover:shadow-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                        onClick={(e) => e.stopPropagation()}
                       >
-                        <Github size={16} /> GitHub
+                        <Github size={16} />
+                        View Code
                       </a>
-                    </div>
-                  )}
-                  {isOpen && (
+                    )}
+                    
                     <button
-                      aria-label="Close"
-                      className="absolute top-4 right-4 p-2 text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none"
-                      onClick={e => { e.stopPropagation(); setExpanded(null); }}
-                    >&times;</button>
-                  )}
-                  {!isOpen && (
-                    <span className="absolute top-2 right-2 text-gray-400 text-xs bg-gray-100 dark:bg-gray-800 rounded-full px-2 py-1">Click to expand</span>
-                  )}
+                      onClick={() => setExpanded(isOpen ? null : index)}
+                      className="px-4 py-3 bg-gradient-to-r from-blue-500 to-emerald-500 text-white rounded-xl hover:shadow-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                      {isOpen ? 'Less' : 'More'}
+                    </button>
+                  </div>
                 </div>
               </div>
             );
           })}
         </div>
-        <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-8">Click any card to expand and explore more project details.</p>
+        
+        <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-12">
+          Click "More" on any project card to explore additional details and technologies.
+        </p>
       </div>
     </section>
   );
