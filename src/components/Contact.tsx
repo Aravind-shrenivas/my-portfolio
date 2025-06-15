@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
@@ -73,7 +72,7 @@ const Contact = () => {
       value: "github.com/aravindshrenivas",
       icon: Github,
       gradient: "from-gray-600 to-gray-700",
-      link: "https://github.com/aravindshrenivas"
+      link: "https://github.com/aravind-shrenivas"
     }
   ];
 
