@@ -65,73 +65,106 @@ const Experience = () => (
       <h2 className="text-5xl font-bold text-center text-gray-900 dark:text-white mb-16 animate-fade-in">
         Professional <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">Experience</span>
       </h2>
-      
       <div className="relative max-w-6xl mx-auto">
         {/* Timeline line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-emerald-500 rounded-full hidden md:block"></div>
-        
         {/* Mobile timeline line */}
         <div className="absolute left-8 w-1 h-full bg-gradient-to-b from-blue-500 to-emerald-500 rounded-full md:hidden"></div>
-        
-        {experiences.map((exp, idx) => (
-          <div key={idx} className="relative mb-16 last:mb-0">
-            {/* Desktop layout - all cards on the right */}
-            <div className="hidden md:flex items-center justify-end">
-              <div className="w-5/12 pl-12 text-left">
-                <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
-                  <div className="flex items-center mb-5 space-x-4">
-                    <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-r from-blue-500 to-emerald-500 shadow-lg">
-                      <exp.icon className="text-white" size={24} />
+        {experiences.map((exp, idx) => {
+          const isLeft = idx % 2 === 0;
+          return (
+            <div key={idx} className="relative mb-16 last:mb-0">
+              {/* Desktop: alternate left/right */}
+              <div className={`hidden md:flex items-center justify-${isLeft ? "start" : "end"}`}>
+                {/* Left card */}
+                {isLeft && (
+                  <>
+                    <div className="w-5/12 pr-12 text-left">
+                      <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
+                        <div className="flex items-center mb-5 space-x-4">
+                          <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-r from-blue-500 to-emerald-500 shadow-lg">
+                            <exp.icon className="text-white" size={24} />
+                          </div>
+                          <div className="text-left">
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-white leading-tight">{exp.company}</h3>
+                            <p className="text-lg text-gray-600 dark:text-gray-300">{exp.title}</p>
+                            <span className="block text-sm text-blue-600 dark:text-emerald-300 font-medium mt-1">{exp.period}</span>
+                          </div>
+                        </div>
+                        <ul className="space-y-3">
+                          {exp.achievements.map((item, achIdx) => (
+                            <li key={achIdx} className="flex items-start space-x-2">
+                              <span className="text-emerald-500 mt-1">•</span>
+                              <span className="text-gray-700 dark:text-gray-200 leading-relaxed">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div className="text-left">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white leading-tight">{exp.company}</h3>
-                      <p className="text-lg text-gray-600 dark:text-gray-300">{exp.title}</p>
+                    {/* Timeline node */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full border-4 border-white dark:border-black shadow-lg z-10"></div>
+                    <div className="flex-1"></div>
+                  </>
+                )}
+                {/* Right card */}
+                {!isLeft && (
+                  <>
+                    <div className="flex-1"></div>
+                    {/* Timeline node */}
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full border-4 border-white dark:border-black shadow-lg z-10"></div>
+                    <div className="w-5/12 pl-12 text-left">
+                      <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
+                        <div className="flex items-center mb-5 space-x-4">
+                          <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-r from-blue-500 to-emerald-500 shadow-lg">
+                            <exp.icon className="text-white" size={24} />
+                          </div>
+                          <div className="text-left">
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-white leading-tight">{exp.company}</h3>
+                            <p className="text-lg text-gray-600 dark:text-gray-300">{exp.title}</p>
+                            <span className="block text-sm text-blue-600 dark:text-emerald-300 font-medium mt-1">{exp.period}</span>
+                          </div>
+                        </div>
+                        <ul className="space-y-3">
+                          {exp.achievements.map((item, achIdx) => (
+                            <li key={achIdx} className="flex items-start space-x-2">
+                              <span className="text-emerald-500 mt-1">•</span>
+                              <span className="text-gray-700 dark:text-gray-200 leading-relaxed">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+              {/* Mobile layout - single column */}
+              <div className="md:hidden ml-16">
+                <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-3xl">
+                  <div className="flex items-center mb-4 space-x-4">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-r from-blue-500 to-emerald-500 shadow-lg">
+                      <exp.icon className="text-white" size={20} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">{exp.company}</h3>
+                      <p className="text-base text-gray-600 dark:text-gray-300">{exp.title}</p>
                       <span className="block text-sm text-blue-600 dark:text-emerald-300 font-medium mt-1">{exp.period}</span>
                     </div>
                   </div>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {exp.achievements.map((item, achIdx) => (
                       <li key={achIdx} className="flex items-start space-x-2">
                         <span className="text-emerald-500 mt-1">•</span>
-                        <span className="text-gray-700 dark:text-gray-200 leading-relaxed">{item}</span>
+                        <span className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
+                {/* Mobile timeline node */}
+                <div className="absolute left-8 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full border-2 border-white dark:border-black shadow-lg z-10" style={{ top: '2rem' }}></div>
               </div>
-              
-              {/* Timeline node */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full border-4 border-white dark:border-black shadow-lg z-10"></div>
             </div>
-            
-            {/* Mobile layout - single column */}
-            <div className="md:hidden ml-16">
-              <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-3xl">
-                <div className="flex items-center mb-4 space-x-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-r from-blue-500 to-emerald-500 shadow-lg">
-                    <exp.icon className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">{exp.company}</h3>
-                    <p className="text-base text-gray-600 dark:text-gray-300">{exp.title}</p>
-                    <span className="block text-sm text-blue-600 dark:text-emerald-300 font-medium mt-1">{exp.period}</span>
-                  </div>
-                </div>
-                <ul className="space-y-2">
-                  {exp.achievements.map((item, achIdx) => (
-                    <li key={achIdx} className="flex items-start space-x-2">
-                      <span className="text-emerald-500 mt-1">•</span>
-                      <span className="text-gray-700 dark:text-gray-200 leading-relaxed text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* Mobile timeline node */}
-              <div className="absolute left-8 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full border-2 border-white dark:border-black shadow-lg z-10" style={{ top: '2rem' }}></div>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   </section>
