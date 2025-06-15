@@ -9,9 +9,13 @@ console.log('Main.tsx loading...');
 const rootElement = document.getElementById("root");
 console.log('Root element:', rootElement);
 
+// Use basename only in production, not in development
+const basename = import.meta.env.PROD ? "/my-portfolio" : "";
+console.log('Using basename:', basename);
+
 if (rootElement) {
   createRoot(rootElement).render(
-    <BrowserRouter basename="/my-portfolio">
+    <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
   );
