@@ -75,15 +75,15 @@ const Experience = () => (
         
         {experiences.map((exp, idx) => (
           <div key={idx} className="relative mb-16 last:mb-0">
-            {/* Desktop layout - alternating sides */}
-            <div className={`hidden md:flex items-center ${idx % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-              <div className={`w-5/12 ${idx % 2 === 0 ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
+            {/* Desktop layout - all cards on the right */}
+            <div className="hidden md:flex items-center justify-end">
+              <div className="w-5/12 pl-12 text-left">
                 <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-3xl group">
-                  <div className={`flex items-center mb-5 space-x-4 ${idx % 2 === 0 ? 'flex-row-reverse space-x-reverse' : ''}`}>
+                  <div className="flex items-center mb-5 space-x-4">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-r from-blue-500 to-emerald-500 shadow-lg">
                       <exp.icon className="text-white" size={24} />
                     </div>
-                    <div className={idx % 2 === 0 ? 'text-right' : 'text-left'}>
+                    <div className="text-left">
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white leading-tight">{exp.company}</h3>
                       <p className="text-lg text-gray-600 dark:text-gray-300">{exp.title}</p>
                       <span className="block text-sm text-blue-600 dark:text-emerald-300 font-medium mt-1">{exp.period}</span>
@@ -91,7 +91,7 @@ const Experience = () => (
                   </div>
                   <ul className="space-y-3">
                     {exp.achievements.map((item, achIdx) => (
-                      <li key={achIdx} className={`flex items-start space-x-2 ${idx % 2 === 0 ? 'flex-row-reverse space-x-reverse text-right' : ''}`}>
+                      <li key={achIdx} className="flex items-start space-x-2">
                         <span className="text-emerald-500 mt-1">•</span>
                         <span className="text-gray-700 dark:text-gray-200 leading-relaxed">{item}</span>
                       </li>

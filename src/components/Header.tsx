@@ -51,26 +51,26 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Animated Hamburger Menu Button */}
+            {/* Enhanced Hamburger Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="relative p-3 rounded-xl bg-gradient-to-br from-gray-900 to-gray-700 hover:from-blue-600 hover:to-blue-800 dark:from-gray-100 dark:to-gray-300 dark:hover:from-blue-200 dark:hover:to-blue-400 text-white dark:text-black transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-2xl overflow-hidden group"
               aria-label="Toggle menu"
             >
-              {/* Animated icons */}
-              <div className="relative w-5 h-5">
-                <Menu 
-                  size={20} 
-                  className={`absolute inset-0 transition-all duration-300 transform ${
-                    isMobileMenuOpen ? 'rotate-180 scale-0 opacity-0' : 'rotate-0 scale-100 opacity-100'
-                  }`}
-                />
-                <X 
-                  size={20} 
-                  className={`absolute inset-0 transition-all duration-300 transform ${
-                    isMobileMenuOpen ? 'rotate-0 scale-100 opacity-100' : 'rotate-180 scale-0 opacity-0'
-                  }`}
-                />
+              {/* Enhanced animated hamburger lines */}
+              <div className="relative w-5 h-5 flex flex-col justify-center items-center">
+                {/* Top line */}
+                <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out ${
+                  isMobileMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'
+                }`}></span>
+                {/* Middle line */}
+                <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out ${
+                  isMobileMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
+                }`}></span>
+                {/* Bottom line */}
+                <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ease-in-out ${
+                  isMobileMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'
+                }`}></span>
               </div>
               
               {/* Hover effect background */}
@@ -85,22 +85,20 @@ const Header = () => {
         isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`} onClick={() => setIsMobileMenuOpen(false)} />
       
-      {/* Animated Side Menu */}
-      <div className={`fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-white/95 dark:bg-black/95 backdrop-blur-xl z-50 transform transition-all duration-500 ease-in-out shadow-2xl border-l border-gray-200 dark:border-gray-800 ${
+      {/* Enhanced Side Menu with smooth slide animation */}
+      <div className={`fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-white/95 dark:bg-black/95 backdrop-blur-xl z-50 transform transition-all duration-400 ease-out shadow-2xl border-l border-gray-200 dark:border-gray-800 ${
         isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
-        {/* Menu Header */}
-        <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">Navigation</h3>
-        </div>
         
         {/* Menu Items */}
-        <div className="flex flex-col p-6 space-y-2">
+        <div className="flex flex-col p-6 space-y-2 pt-20">
           {navigationItems.map((item, index) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`text-left py-4 px-4 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-900 rounded-xl transform hover:translate-x-2 opacity-0 animate-fade-in`}
+              className={`text-left py-4 px-4 text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 transition-all duration-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-900 rounded-xl transform hover:translate-x-2 ${
+                isMobileMenuOpen ? 'animate-slide-in-menu' : ''
+              }`}
               style={{ 
                 animationDelay: `${(index + 1) * 50}ms`,
                 animationFillMode: 'forwards'
