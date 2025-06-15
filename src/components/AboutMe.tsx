@@ -50,7 +50,7 @@ const AboutMe = () => {
                     Get In Touch
                   </a>
                   <a 
-                    href="https://drive.google.com/file/d/16yaHzOuZpZhXr4IVq4mLE6NqUwWFI4Ic/view?usp=sharing" 
+                    href="https://drive.google.com/file/d/1189PExRLS2bvao-KqzHWUkV1Dgsy968O/view?usp=sharing" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
@@ -128,7 +128,7 @@ const AboutMe = () => {
                   Get In Touch
                 </a>
                 <a 
-                  href="https://drive.google.com/file/d/16yaHzOuZpZhXr4IVq4mLE6NqUwWFI4Ic/view?usp=sharing" 
+                  href="https://drive.google.com/file/d/1189PExRLS2bvao-KqzHWUkV1Dgsy968O/view?usp=sharing" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="border-2 border-emerald-500 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 text-center"
