@@ -1,10 +1,15 @@
 
 import React, { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
+import { useTerminal } from '../contexts/TerminalContext';
 
 const FloatingThemeToggle = () => {
   const { isDark, toggleTheme } = useTheme();
+  const { isTerminalOpen } = useTerminal();
   const [isHovered, setIsHovered] = useState(false);
+
+  // Hide theme toggle when terminal is open
+  if (isTerminalOpen) return null;
 
   return (
     <div 

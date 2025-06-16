@@ -15,18 +15,18 @@ const openLink = (url: string) => {
 export const commands: { [key: string]: (args?: string[]) => React.ReactNode } = {
   help: () => (
     <div className="mt-1 font-mono">
-      <p className="mb-3">Available commands:</p>
+      <p className="mb-3 text-green-400">Available commands:</p>
       <div className="space-y-1">
-        <div><span className="text-green-400 w-16 inline-block">help</span> - Show this command list</div>
-        <div><span className="text-green-400 w-16 inline-block">about-me</span> - Display my bio and summary</div>
-        <div><span className="text-green-400 w-16 inline-block">my-experiences</span> - Print a timeline of my roles</div>
-        <div><span className="text-green-400 w-16 inline-block">my-projects</span> - List my personal projects</div>
-        <div><span className="text-green-400 w-16 inline-block">passions</span> - List my hobbies/interests</div>
-        <div><span className="text-green-400 w-16 inline-block">get-cv</span> - Open my CV in a new tab</div>
-        <div><span className="text-green-400 w-16 inline-block">get-linkedin</span> - Open my LinkedIn profile</div>
-        <div><span className="text-green-400 w-16 inline-block">get-github</span> - Open my GitHub profile</div>
-        <div><span className="text-green-400 w-16 inline-block">clear</span> - Clear the terminal screen</div>
-        <div><span className="text-green-400 w-16 inline-block">themes</span> - Cycle through terminal color themes</div>
+        <div className="flex"><span className="text-green-400 w-20">help</span><span className="text-gray-300">- Show this command list</span></div>
+        <div className="flex"><span className="text-green-400 w-20">about-me</span><span className="text-gray-300">- Display my bio and summary</span></div>
+        <div className="flex"><span className="text-green-400 w-20">my-experiences</span><span className="text-gray-300">- Print a timeline of my roles</span></div>
+        <div className="flex"><span className="text-green-400 w-20">my-projects</span><span className="text-gray-300">- List my personal projects</span></div>
+        <div className="flex"><span className="text-green-400 w-20">passions</span><span className="text-gray-300">- List my hobbies/interests</span></div>
+        <div className="flex"><span className="text-green-400 w-20">get-cv</span><span className="text-gray-300">- Open my CV in a new tab</span></div>
+        <div className="flex"><span className="text-green-400 w-20">get-linkedin</span><span className="text-gray-300">- Open my LinkedIn profile</span></div>
+        <div className="flex"><span className="text-green-400 w-20">get-github</span><span className="text-gray-300">- Open my GitHub profile</span></div>
+        <div className="flex"><span className="text-green-400 w-20">clear</span><span className="text-gray-300">- Clear the terminal screen</span></div>
+        <div className="flex"><span className="text-green-400 w-20">themes</span><span className="text-gray-300">- Cycle through terminal color themes</span></div>
       </div>
     </div>
   ),

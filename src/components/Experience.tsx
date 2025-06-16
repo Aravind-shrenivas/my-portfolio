@@ -66,10 +66,9 @@ const Experience = () => (
         Professional <span className="bg-gradient-to-r from-blue-500 to-emerald-500 bg-clip-text text-transparent">Experience</span>
       </h2>
       <div className="relative max-w-6xl mx-auto">
-        {/* Timeline line */}
+        {/* Desktop Timeline line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 to-emerald-500 rounded-full hidden md:block"></div>
-        {/* Mobile timeline line */}
-        <div className="absolute left-8 w-1 h-full bg-gradient-to-b from-blue-500 to-emerald-500 rounded-full md:hidden"></div>
+        
         {experiences.map((exp, idx) => {
           const isLeft = idx % 2 === 0;
           return (
@@ -137,8 +136,9 @@ const Experience = () => (
                   </>
                 )}
               </div>
-              {/* Mobile layout - single column */}
-              <div className="md:hidden ml-16">
+              
+              {/* Mobile and tablet layout - single column cards stacked vertically */}
+              <div className="md:hidden">
                 <div className="bg-white/90 dark:bg-black/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-gray-200 dark:border-gray-800 transition-all duration-500 hover:scale-105 hover:shadow-3xl">
                   <div className="flex items-center mb-4 space-x-4">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-r from-blue-500 to-emerald-500 shadow-lg">
@@ -159,8 +159,6 @@ const Experience = () => (
                     ))}
                   </ul>
                 </div>
-                {/* Mobile timeline node */}
-                <div className="absolute left-8 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-500 to-emerald-500 rounded-full border-2 border-white dark:border-black shadow-lg z-10" style={{ top: '2rem' }}></div>
               </div>
             </div>
           );
