@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 // URLs for resource commands
@@ -18,16 +17,16 @@ export const commands: { [key: string]: (args?: string[]) => React.ReactNode } =
     <div className="mt-1 font-mono">
       <p className="mb-3">Available commands:</p>
       <div className="space-y-1">
-        <div><span className="text-green-400 w-16 inline-block">help</span>           - Show this command list</div>
-        <div><span className="text-green-400 w-16 inline-block">about-me</span>       - Display my bio and summary</div>
+        <div><span className="text-green-400 w-16 inline-block">help</span> - Show this command list</div>
+        <div><span className="text-green-400 w-16 inline-block">about-me</span> - Display my bio and summary</div>
         <div><span className="text-green-400 w-16 inline-block">my-experiences</span> - Print a timeline of my roles</div>
-        <div><span className="text-green-400 w-16 inline-block">my-projects</span>    - List my personal projects</div>
-        <div><span className="text-green-400 w-16 inline-block">passions</span>       - List my hobbies/interests</div>
-        <div><span className="text-green-400 w-16 inline-block">get-cv</span>         - Open my CV in a new tab</div>
-        <div><span className="text-green-400 w-16 inline-block">get-linkedin</span>   - Open my LinkedIn profile</div>
-        <div><span className="text-green-400 w-16 inline-block">get-github</span>     - Open my GitHub profile</div>
-        <div><span className="text-green-400 w-16 inline-block">clear</span>          - Clear the terminal screen</div>
-        <div><span className="text-green-400 w-16 inline-block">themes</span>         - Cycle through terminal color themes</div>
+        <div><span className="text-green-400 w-16 inline-block">my-projects</span> - List my personal projects</div>
+        <div><span className="text-green-400 w-16 inline-block">passions</span> - List my hobbies/interests</div>
+        <div><span className="text-green-400 w-16 inline-block">get-cv</span> - Open my CV in a new tab</div>
+        <div><span className="text-green-400 w-16 inline-block">get-linkedin</span> - Open my LinkedIn profile</div>
+        <div><span className="text-green-400 w-16 inline-block">get-github</span> - Open my GitHub profile</div>
+        <div><span className="text-green-400 w-16 inline-block">clear</span> - Clear the terminal screen</div>
+        <div><span className="text-green-400 w-16 inline-block">themes</span> - Cycle through terminal color themes</div>
       </div>
     </div>
   ),
