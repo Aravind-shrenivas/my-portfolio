@@ -20,7 +20,8 @@ const Index = () => {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+      <div className="min-h-screen bg-blue-500">
+        <div className="text-white p-4">DEBUG: Index is rendering</div>
         <Header />
         <main className="relative">
           <AboutMe />
