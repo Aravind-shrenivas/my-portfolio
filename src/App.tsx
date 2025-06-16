@@ -20,16 +20,13 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <TerminalProvider>
-          <div className="min-h-screen bg-red-500">
-            <div>DEBUG: App is rendering</div>
-            <Toaster />
-            <Sonner />
-            <Terminal />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
+          <Toaster />
+          <Sonner />
+          <Terminal />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </TerminalProvider>
       </TooltipProvider>
     </QueryClientProvider>
